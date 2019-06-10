@@ -6,13 +6,7 @@
 <title>HIỂN THỊ</title>
 </head>
 <body>
-<?php 
-	include('ketnoi.php');
-	$sql2="select * from sanpham";
-	$thucthi2=mysqli_query($conn,$sql2);
-	while ($row=mysqli_fetch_array($thucthi2))
-	{
-		?>
+
    <table border="1" bgcolor="#99FF00" cellpadding="0" cellspacing="0">
         <tr>
         	<td><h4>STT</h4></td>
@@ -23,7 +17,15 @@
             <td><h4>LOẠI HÀNG</h4></td>
             <td><h4>KÍCH CỠ</h4></td>
             <td><h4>HÌNH MẪU</h4></td>
+            <td><a href="themsp.php">THÊM SP</a></td>
     	</tr>
+        <?php 
+	include('ketnoi.php');
+	$sql2="select * from sanpham";
+	$thucthi2=mysqli_query($conn,$sql2);
+	while ($row=mysqli_fetch_array($thucthi2))
+	{
+		?>
     <tr>
     	<td><?php echo $row['id'];?></td>
         <td><?php echo $row['name'];?></td>
