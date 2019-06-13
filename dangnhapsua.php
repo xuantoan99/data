@@ -2,13 +2,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Trang Chủ</title>
+<title>Đăng Nhập</title>
 <link rel="stylesheet" type="text/css" href="trangchu/dd.css">
 </head>
 
 <body>
 	<div id="all">
-    <form method="get">
     	<div id="header"><h1 style="padding-top:40px">SHOP BÁN HÀNG ONLINE</h1>
         </div>
         <div id="nav">
@@ -19,37 +18,43 @@
                 <li><a href="#">LIÊN HỆ</a></li>
             </ul>
         </div>
-        <div id="search"><img src="trangchu/img/cacdanhmuc.png" width="205" height="41" style="position:relative"><input type="text" placeholder="Nhập tên sản phẩm" style="width:750px; height:37px; position:absolute"><img src="trangchu/img/search.png" width="25" height="27" style="float:right; padding-top:9px"></div>
         <div id="all2">
         <div id="left"><img src="trangchu/img/im8.jpg" width="230" height="450"><img src="trangchu/img/logo_23.gif" width="225" height="270"></div>
         
         
-        <div id="center"><img src="trangchu/img/khuyenmai_03.jpg" width="575" height="97">
-        <?php 
+        <div id="center">
+        <form method="post" >
+	<table align="center" border="0" cellpadding="0" cellspacing="10" style="margin:auto">
+    	<tr>
+        	<td colspan="2" align="center"><h1>ĐĂNG NHẬP</h1></td>
+        </tr>
+        <tr>
+        	
+            <td><input type="text" name="tk" placeholder="Tên tài khoản *"></td>
+        </tr>
+        <tr>
+            <td><input type="password" name="mk" placeholder="Mật khẩu *"></td>
+        </tr>
+        <tr>
+        	<td colspan="2" align="center"><input type="submit" name="ok" value="Đăng nhập"></td>
+        </tr>
+    </table>
+</form>
+<?php
 	include('ketnoi.php');
-	$sql2="select Max(id) from sanpham";
-	$thucthi2=mysqli_query($conn,$sql2);
-	while ($row2=mysqli_fetch_array($thucthi2))
-	{$i=$row2['Max(id)'];
-		$a=$i-6;
-		 }?>
-         
-	<?php
-	while($a<=$i){
-			$a++;
-	$sql="select * from sanpham where id=$a";
-	$thucthi=mysqli_query($conn,$sql);
-	while ($row=mysqli_fetch_array($thucthi))
-	{
-		?>
-        <table>
-        	<tr>
-            	<td><img src="img/<?php echo $row['image'];?>" width="200" height="200"></td>
-                <td><?php echo $row['name'];?><br>Kích cỡ: <?php echo $row['size'];?><br>Giá: <?php echo $row['price'];?><br>
-                <a href="giohang.php?masp=<?php echo $row['code']; ?>"><img src="trangchu/img/mua ngay.gif" width="178" height="30"></a><a href="<a href="chitiet.php?masp=<?php echo $row['code']; ?>"><img src="trangchu/img/chitiet.jpg" width="144" height="30" style="padding-left:20px"></a></td>
-            </tr>
-			 <?php } }?>
-        </table>
+	if(isset($_POST['ok']))
+	{$tk=$_POST['tk'];
+		$mk=$_POST['mk'];
+		$query="select * from khachhang where account='$tk' and password='$mk'";
+		$result=mysqli_query($conn,$query);
+		$count=mysqli_num_rows($result);
+		if($count==1)
+			{$_SESSION['user']=$tk;
+			header("location:hienthi.php");
+			 echo "Thanh cong"; }
+			else{echo "<p style='color:red;'>Sai tài khoản hoặc mật khẩu!</p>";}
+		}
+?>
 		</div>
         <div id="right"><img src="trangchu/img/im7.png" width="140" height="400"><img src="trangchu/img/img2.jpg" width="140" height="300"></div>
         <div id="clr"></div>
