@@ -83,7 +83,7 @@
 	}
 	?>
 		</div>
-        <div id="right"><img src="trangchu/img/im7.png" width="140" height="400"><img src="trangchu/img/img2.jpg" width="140" height="300"></div>
+        <div id="right"></div>
         <div id="clr"></div>
         <div id="menu">
         	<ul>

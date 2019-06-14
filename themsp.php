@@ -1,12 +1,30 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>THÊM SẢN PHẨM</title>
+<title>Thêm Sản Phẩm</title>
+<link rel="stylesheet" type="text/css" href="trangchu/dd.css">
 </head>
+
 <body>
-	<form method="post" enctype="multipart/form-data">
-    	<table width="600" cellpadding="0" cellspacing="5" bgcolor="orange">
+	<div id="all">
+    	<div id="header"><h1 style="padding-top:40px">SHOP BÁN HÀNG ONLINE</h1>
+        </div>
+        <div id="nav">
+        	<ul>
+            	<li><a href="trangchu.php">TRANG CHỦ</a></li>
+                <li><a href="#">SẢN PHẨM</a></li>
+                <li><a href="#">THÔNG TIN</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+        <div id="all2">
+        <div id="left"></div>
+        
+        
+        <div id="center">
+        <form method="post" enctype="multipart/form-data">
+    	<table width="600" cellpadding="0" cellspacing="5" border="1">
         	<tr>
             	<td align="center">THÊM SẢN PHẨM</td>
             </tr>
@@ -81,6 +99,24 @@
 	 			 header('location:hienthi.php');}
 	}
 	?>
-    
+		</div>
+        <div id="right"></div>
+        <div id="clr"></div>
+        <div id="menu">
+        	<ul>
+            	<li><a href="trangchu.php">TRANG CHỦ</a></li>
+                <li><a href="#">SẢN PHẨM</a></li>
+                <li><a href="#">THÔNG TIN</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+        <div id="footer">
+        <a href="#">Đăng nhập</a> | <a href="#">Đăng ký</a> <br><br>
+        ©2012  Web thời trang chuẩn Chuẩn All Rights Reserved.
+        </div>
+        </div>
+        </form>
+    </div>
+
 </body>
 </html>

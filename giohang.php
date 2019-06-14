@@ -4,18 +4,33 @@
 	$sql="select * from sanpham where code='$id'";
 	$thucthi=mysqli_query($conn,$sql);
 	$row2=mysqli_fetch_array($thucthi);
-	
 ?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>giỏ hàng</title>
-<link href="dd.css" type="text/css" rel="stylesheet" media="screen,print"/>
+<title>Đăng Nhập</title>
+<link rel="stylesheet" type="text/css" href="trangchu/dd.css">
 </head>
 
 <body>
-<?php
+	<div id="all">
+    	<div id="header"><h1 style="padding-top:40px">SHOP BÁN HÀNG ONLINE</h1>
+        </div>
+        <div id="nav">
+        	<ul>
+            	<li><a href="trangchu.php">TRANG CHỦ</a></li>
+                <li><a href="#">SẢN PHẨM</a></li>
+                <li><a href="#">THÔNG TIN</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+        <div id="all2">
+        <div id="left"></div>
+        
+        
+        <div id="center">
+        <?php
 		include('ketnoi.php');
 $sql2="select * from sanpham";
 	$thucthi2=mysqli_query($conn,$sql2);
@@ -63,5 +78,24 @@ $sql2="select * from sanpham";
     </table>
 </form>
 <?php }?>
+		</div>
+        <div id="right"><img src="trangchu/img/im7.png" width="140" height="400"><img src="trangchu/img/img2.jpg" width="140" height="300"></div>
+        <div id="clr"></div>
+        <div id="menu">
+        	<ul>
+            	<li><a href="trangchu.php">TRANG CHỦ</a></li>
+                <li><a href="#">SẢN PHẨM</a></li>
+                <li><a href="#">THÔNG TIN</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+        <div id="footer">
+        <a href="#">Đăng nhập</a> | <a href="#">Đăng ký</a> <br><br>
+        ©2012  Web thời trang chuẩn Chuẩn All Rights Reserved.
+        </div>
+        </div>
+        </form>
+    </div>
+
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <?php
 	include('ketnoi.php');
 	$id=$_GET['id'];	
@@ -11,11 +10,29 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Sửa</title>
+<title>Sửa Sản Phẩm</title>
+<link rel="stylesheet" type="text/css" href="trangchu/dd.css">
 </head>
+
 <body>
-<form method="post" enctype="multipart/form-data">
-    	<table width="600" cellpadding="0" cellspacing="5" bgcolor="orange">
+	<div id="all">
+    	<div id="header"><h1 style="padding-top:40px">SHOP BÁN HÀNG ONLINE</h1>
+        </div>
+        <div id="nav">
+        	<ul>
+            	<li><a href="trangchu.php">TRANG CHỦ</a></li>
+                <li><a href="#">SẢN PHẨM</a></li>
+                <li><a href="#">THÔNG TIN</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+        <div id="all2">
+        <div id="left"></div>
+        
+        
+        <div id="center">
+  <form method="post" enctype="multipart/form-data">
+    	<table width="600" cellpadding="0" cellspacing="5" border="1">
         	<tr>
             	<td align="center">SỬA SẢN PHẨM</td>
             </tr>
@@ -90,5 +107,7 @@
 	 			 header('location:hienthi.php');}
 	}
 	?>
+    </div>
+
 </body>
 </html>
