@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Đăng Nhập</title>
+<title>giỏ hàng</title>
 <link rel="stylesheet" type="text/css" href="trangchu/dd.css">
 </head>
 
